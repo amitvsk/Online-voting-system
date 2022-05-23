@@ -3,6 +3,9 @@ const route = require("./routes/route");
 const  mongoose  = require('mongoose');
 const app = express();
 
+
+const multer= require("multer");
+const { AppConfig } = require('aws-sdk');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -10,6 +13,7 @@ mongoose.connect("mongodb+srv://amitvish:4nai6CZgrFtr5B7R@cluster0.3bgsk.mongodb
     useNewUrlParser: true
 }).then(() => console.log("MongoDb is connected")).catch(err => console.log(err));
 
+app.use( multer().any())
 
 app.use('/', route);
 

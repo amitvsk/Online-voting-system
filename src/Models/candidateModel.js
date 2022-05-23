@@ -12,9 +12,8 @@ const userSchema = new mongoose.Schema({
             trim: true,
             required:true
         },
-        logo:{
-            data: Buffer,
-            contentType: String
+        logo:{ 
+            type: String
         },
         AdharNo:{
             type:Number,
